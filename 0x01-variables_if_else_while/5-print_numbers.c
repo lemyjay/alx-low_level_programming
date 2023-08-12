@@ -8,8 +8,8 @@
 int main(void)
 {
 	int a;
-	/*The decimal value for lowercase 'a' in ASCII is 97 and that of 'z' is 122*/
-	for (a = 97; a < 123; a++)
+	/*The decimal value for '0' in ASCII is 48 and that of '9' is 58*/
+	for (a = 48; a < 58; a++)
 		putchar(a);
 	putchar('\n');
 	return (0);

@@ -8,7 +8,7 @@
 int main(void)
 {
 	int a;
-	/*The decimal value for lowercase 'a' is 97 and that of 'z' is 123*/
+	/*The decimal value for lowercase 'a' in ASCII is 97 and that of 'z' is 122*/
 	for (a = 97; a < 123; a++)
 	{
 		if (a != 101 && a != 113)
