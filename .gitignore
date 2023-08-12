@@ -1,0 +1,12 @@
+# Compiled Binary Files
+*.o
+*.so
+*.dll
+*.exe
+
+# Executable Files
+a.out
+
+# Object Files
+*.obj
+
