@@ -7,7 +7,9 @@ int _putchar(char c);
 void print_alphabet(void);
 /* Declaration of the function print_alphabet_x10 */
 void print_alphabet_x10(void);
-/* Declaration of the funtion -islower */
+/* Declaration of the funtion _islower */
 int _islower(int c);
+/* Declaration of the function _isalpha */
+int _isalpha(int c);
 
 #endif /* MAIN_H */
