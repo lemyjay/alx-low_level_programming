@@ -9,7 +9,15 @@
 void print_alphabet_x10(void)
 {
 	int a;
+	int b;
 
-	for (a = 1; a <= 10; a++)
-	print_alphabet();
+	for (b = 1; b <= 10; b++)
+	{
+		for (a = 97; a < 123; a++)
+		{
+		_putchar(a);
+		if (a == 122)
+			_putchar('\n');
+		}
+	}
 }
