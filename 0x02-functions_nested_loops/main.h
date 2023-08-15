@@ -11,5 +11,7 @@ void print_alphabet_x10(void);
 int _islower(int c);
 /* Declaration of the function _isalpha */
 int _isalpha(int c);
+/* Declaration of the function print_sign */
+int print_sign(int n);
 
 #endif /* MAIN_H */
