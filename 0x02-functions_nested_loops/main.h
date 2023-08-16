@@ -17,4 +17,6 @@ int print_sign(int n);
 int _abs(int);
 /* Declaration of the function print_last_digit */
 int print_last_digit(int);
+/* Declaration of the function jack_bauer */
+void jack_bauer(void);
 #endif /* MAIN_H */
