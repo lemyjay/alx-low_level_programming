@@ -15,4 +15,6 @@ int _isalpha(int c);
 int print_sign(int n);
 /* Declaration of the function _abs */
 int _abs(int);
+/* Declaration of the function print_last_digit */
+int print_last_digit(int);
 #endif /* MAIN_H */
