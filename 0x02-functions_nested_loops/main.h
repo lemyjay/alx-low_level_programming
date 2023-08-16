@@ -25,4 +25,6 @@ void times_table(void);
 int add(int, int);
 /* Declaration of the function print_to_98 */
 void print_to_98(int n);
+/* Declaration of the function print_times_table */
+void print_times_table(int n);
 #endif /* MAIN_H */
