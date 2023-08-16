@@ -3,58 +3,62 @@
 /**
  * print_times_table - Entry point to function
  *
- * @n: hold the value you want to create the times table for
- * prints n times table, starting with 0 where n lies between 15 and 0
+ * @n: holds the value you want to create the times table for
+ * checks if n falls within the accepted range
+ * that is n should lie between 0 and 15,
+ * then it calls the checkPrint function to print
  * Returns no value
  */
 void print_times_table(int n)
 {
-	int a;
-	int b;
-	int product;
-
 	if (n <= 15 && n >= 0)
-	{
-		for (a = 0; a <= n; a++)
-		{
-			for (b = 0; b <= n; b++)
-			{
-				product = a * b;
-				if (product < 10)
-				{
-					if (b >= 1)
-					{
-						_putchar(' ');
-						_putchar(' ');
-					}
-					_putchar(product + '0');
-				}
-				else if (product < 100)
-				{
-					int firstDigit = product / 10;
-					int secondDigit = product % 10;
-					if (b >= 1)
-						_putchar(' ');
-					_putchar(firstDigit + '0');
-					_putchar(secondDigit + '0');
-				}
-				else
-				{
-					int firstDigit = product / 100;
-					int secondDigit = (product - (firstDigit * 100)) / 10;
-					int thirdDigit = product % 10;
-					_putchar(firstDigit + '0');
-					_putchar(secondDigit + '0');
-					_putchar(thirdDigit + '0');
-				}
+		checkPrint(n);
+}
 
-				if (b < n)
+/**
+ * checkPrint - Entry point to function
+ *
+ * @d: holds or receives the value you want to create the times table for
+ * prints n times table, starting with 0
+ * Returns no value
+ */
+void checkPrint(int d)
+{
+	int a, b, product;
+
+	for (a = 0; a <= d; a++)
+	{
+		for (b = 0; b <= d; b++)
+		{
+			product = a * b;
+			if (product < 10)
+			{
+				if (b >= 1)
 				{
-					_putchar(',');
+					_putchar(' ');
 					_putchar(' ');
 				}
+				_putchar(product + '0');
 			}
-			_putchar('\n');
+			else if (product < 100)
+			{
+				if (b >= 1)
+					_putchar(' ');
+				_putchar((product / 10) + '0');
+				_putchar((product % 10) + '0');
+			}
+			else
+			{
+				_putchar((product / 100) + '0');
+				_putchar(((product / 10) % 10) + '0');
+				_putchar((product % 10) + '0');
+			}
+			if (b < d)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
+		_putchar('\n');
 	}
 }
