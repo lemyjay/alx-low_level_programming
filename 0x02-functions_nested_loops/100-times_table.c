@@ -3,6 +3,7 @@
 /**
  * print_times_table - Entry point to function
  *
+ * @n: hold the value you want to create the times table for
  * prints n times table, starting with 0 where n lies between 15 and 0
  * Returns no value
  */
@@ -47,7 +48,7 @@ void print_times_table(int n)
 					_putchar(thirdDigit + '0');
 				}
 
-				if(b < n)
+				if (b < n)
 				{
 					_putchar(',');
 					_putchar(' ');
