@@ -15,8 +15,8 @@ void jack_bauer(void)
 	{
 		for (minute = 0; minute < 60; minute++)
 		{
-			int first;
-			int second;
+			int firstDigit;
+			int secondDigit;
 
 			if (hour < 10)
 			{
@@ -25,10 +25,10 @@ void jack_bauer(void)
 			}
 			else
 			{
-				first = hour / 10;
-				second = hour % 10;
-				_putchar(first + '0');
-				_putchar(second + '0');
+				firstDigit = hour / 10;
+				secondDigit = hour % 10;
+				_putchar(firstDigit + '0');
+				_putchar(secondDigit + '0');
 			}
 			_putchar(':');
 			if (minute < 10)
@@ -38,10 +38,10 @@ void jack_bauer(void)
 			}
 			else
 			{
-				first = minute / 10;
-				second = minute % 10;
-				_putchar(first + '0');
-				_putchar(second + '0');
+				firstDigit = minute / 10;
+				secondDigit = minute % 10;
+				_putchar(firstDigit + '0');
+				_putchar(secondDigit + '0');
 			}
 			_putchar('\n');
 		}
