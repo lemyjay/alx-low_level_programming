@@ -19,4 +19,6 @@ int _abs(int);
 int print_last_digit(int);
 /* Declaration of the function jack_bauer */
 void jack_bauer(void);
+/* Declaration of the function times_table */
+void times_table(void);
 #endif /* MAIN_H */
