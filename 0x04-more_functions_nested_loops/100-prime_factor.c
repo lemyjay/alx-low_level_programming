@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 /**
  * main - Entry point to the code.
@@ -9,28 +10,32 @@
  */
 int main(void)
 {
-	long int i, a;
-	long int largestPF = 0;
-	long int checkPrime = 0;
-	long int number = 612852475143;
+	unsigned long int largestPF = 0;
+	unsigned long int i;
+	unsigned long int number = 612852475143;
 
-	for (i = 1; i <= number; i++)
+	/* Divide by 2 until the number becomes odd */
+	while (number % 2 == 0)
 	{
-		if (number % i == 0)
+		largestPF = 2;
+		number /= 2;
+	}
+
+	/* Check for prime factors starting from 3 */
+	for (i = 3; i <= sqrt(number); i += 2)
+	{
+		while (number % i == 0)
 		{
-			for (a = 1; a <= i; a++)
-			{
-				if (i % a == 0)
-					checkPrime++;
-			}
-			if (checkPrime == 2)
-			{
-				if (largestPF < i)
-					largestPF = i;
-			}
+			largestPF = i;
+			number /= i;
 		}
 	}
-	printf("%ld\n", largestPF);
+
+	/* If the remaining number is a prime factor larger than current largest */
+	if (number > 2 && number > largestPF)
+		largestPF = number;
+
+	printf("%lu\n", largestPF);
 
 	return (0);
 }
