@@ -11,6 +11,7 @@ void print_alphabet_x10(void);
 int _isupper(int c);
 int _isdigit(int c);
 int mul(int a, int b);
+void print_numbers(void);
 /* Declaration of the function _isalpha */
 int _isalpha(int c);
 /* Declaration of the function print_sign */
