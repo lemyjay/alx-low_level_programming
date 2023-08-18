@@ -8,20 +8,22 @@
 
 void print_number(int n)
 {
-	if (n < 0)
+	unsigned int number = n;
+
+	if (number < 0)
 	{
 		_putchar('-');
-		n = -n;
+		number = -number;
 	}
 
 	/*
-	 * checks if n is greater than or equal to 10
+	 * checks if number is greater than or equal to 10
 	 * if it's true, it means there are more digits left to print
-	 * the print_number(n / 10); line recursively calls the print_number function
-	 * with n divided by 10
+	 * the print_number(number / 10); line recursively calls the print_number function
+	 * with number divided by 10
 	 * This effectively prints the digits from left to righti
 	 */
-	if (n / 10)
-		print_number(n / 10);
-	_putchar(n % 10 + '0');
+	if (number / 10)
+		print_number(number / 10);
+	_putchar((number % 10) + '0');
 }
