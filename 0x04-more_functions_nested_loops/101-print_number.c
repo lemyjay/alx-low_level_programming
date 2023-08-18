@@ -19,7 +19,8 @@ void print_number(int n)
 	/*
 	 * checks if number is greater than or equal to 10
 	 * if it's true, it means there are more digits left to print
-	 * the print_number(number / 10); line recursively calls the print_number function
+	 * the print_number(number / 10);
+	 * line recursively calls the print_number function
 	 * with number divided by 10
 	 * This effectively prints the digits from left to righti
 	 */
