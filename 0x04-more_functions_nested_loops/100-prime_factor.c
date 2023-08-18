@@ -3,7 +3,8 @@
 /**
  * main - Entry point to the code.
  *
- * A program that finds and prints the largest prime factor of the number 612852475143
+ * A program that finds and prints the largest prime factor
+ * of the number 612852475143
  * Return: Always 0.
  */
 int main(void)
@@ -12,9 +13,9 @@ int main(void)
 	long int largestPF = 0;
 	long int checkPrime = 0;
 	long int number = 612852475143;
+
 	for (i = 1; i <= number; i++)
 	{
-		/*int temp = i;*/
 		if (number % i == 0)
 		{
 			for (a = 1; a <= i; a++)
