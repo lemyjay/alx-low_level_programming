@@ -18,6 +18,7 @@ void print_rev(char *s)
 		length++;
 		s++;
 	}
+	s++;
 
 	/*
 	 * After calculating the length of the string,
