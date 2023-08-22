@@ -26,7 +26,7 @@ void print_rev(char *s)
 	 * we then start printing from there towards the first character
 	 * by decrementing
 	 */
-	for (i = 0; i <= length; i++)
+	for (i = 0; i <= length + 1; i++)
 		_putchar(*(s - i));
 	_putchar('\n');
 }
