@@ -29,7 +29,6 @@ void print_rev(char *s)
 	 * by decrementing
 	 */
 	for (i = 0; i < length; i++)
-		_putchar(*(s - i - 1));
-	_putchar('\0');
+		_putchar(s[i]);
 	_putchar('\n');
 }
