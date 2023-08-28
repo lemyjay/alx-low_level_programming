@@ -7,7 +7,7 @@
  * of a string to uppercase.
  *
  * @s: pointer that points to the string you want to perform the operation on
- * Return: the char in upper case
+ * Return: the point to the string with it in uppercase
  */
 
 char *string_toupper(char *s)
