@@ -1,32 +1,22 @@
 #include "main.h"
 
 /**
- * _sqrt_recursive - A helper function that recursively searches for
- * the square root utilizing a binary search
+ * _sqrt_check - A helper function that recursively searches for
+ * the square root
  *
- * @n: The number for which to find the square root
- * @start: The start of the range to search
- * @end: The end of the range to search
- * Return: The square root if found, otherwise -1
+ * @a: integer to be incremented and multiplied by itself until b(which holds
+ * the value of n) is found.
+ * @b: hold the value of n.
+ * Return: an integer, 1 or -1
  */
 
-int _sqrt_recursive(int n, int start, int end)
+int _sqrt_check(int a, int b)
 {
-	if (start <= end)
-	{
-		int mid = (start + end) / 2;
-		int midSquared = mid * mid;
-
-		if (midSquared == n)
-		{
-			return (mid);
-		}
-		else if (midSquared < n)
-			return (_sqrt_recursive(n, mid + 1, end));
-		else
-			return (_sqrt_recursive(n, start, mid - 1));
-	}
-	return (-1); /* If no natural square root found */
+	if (a * a == b)
+		return (a);
+	if (a * a > b)
+		return (-1);
+	return (_sqrt_check(a + 1, b));
 }
 
 /**
@@ -39,7 +29,7 @@ int _sqrt_recursive(int n, int start, int end)
 
 int _sqrt_recursion(int n)
 {
-	if (n < 0)
-		return (-1);
-	return (_sqrt_recursive(n, 0, n));
+	if (n == 0)
+		return (0);
+	return (_sqrt_check(1, n));
 }
