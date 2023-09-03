@@ -16,17 +16,21 @@
 
 char *rot13(char *s)
 {
-	int i;
+	int a;
+	int b;
+	char rot1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char rot2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (a = 0; s[a] != '\0'; a++)
 	{
-		if (s[i] >= 'A' && s[i] <= 'Z' && s[i] + 13 > 'Z')
-			s[i] = 64 + (s[i] - 51) % 26;
-		else if (s[i] >= 'a' && s[i] <= 'z' && s[i] + 13 > 'z')
-			s[i] = 96 + (s[i] - 83) % 26;
-		else if ((s[i] >= 'A' && s[i] <= 'Z' && s[i] + 13 <= 'Z') ||
-				(s[i] >= 'a' && s[i] <= 'z' && s[i] + 13 <= 'z'))
-			s[i] += 13;
+		for (b = 0; b < 52; b++)
+		{
+			if (rot1[b] == s[a])
+			{
+				s[a] = rot2[b];
+				break;
+			}
+		}
 	}
 
 	return (s);
