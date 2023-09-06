@@ -36,7 +36,7 @@ unsigned int str_length(char *s)
 char *str_concat(char *s1, char *s2)
 {
 	char *new_str;
-	unsigned int i, j, length1, length2;
+	unsigned int i, j, length1 = 0, length2 = 0;
 
 	if (s1 != NULL)
 		length1 = str_length(s1);
@@ -55,7 +55,7 @@ char *str_concat(char *s1, char *s2)
 	for (j = 0; i < length2; j++, i++)
 		new_str[i] = s2[j];
 
-	new_str[i] = '\0';
+	new_str[length1 + length2 + 1) = '\0';
 
 	return (new_str);
 }
