@@ -38,14 +38,11 @@ char *str_concat(char *s1, char *s2)
 	char *new_str;
 	unsigned int i, j, length1, length2;
 
-	if (s1 == NULL)
-		s1 = "";
+	if (s1 != NULL)
+		length1 = str_length(s1);
 
-	if (s2 == NULL)
-		s2 = "";
-
-	length1 = str_length(s1);
-	length2 = str_length(s2);
+	if (s2 != NULL)
+		length2 = str_length(s2);
 
 	new_str = (char *)malloc((length1 + length2 + 1) * sizeof(char));
 
