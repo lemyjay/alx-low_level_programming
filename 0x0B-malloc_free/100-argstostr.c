@@ -27,9 +27,10 @@ char *argstostr(int ac, char **av)
 			length++;
 		n += length + 1;
 	}
+	n++;
 
 	/* Allocating memory for the concatenated string. */
-	new = (char *)malloc(n * sizeof(char ));
+	new = (char *)malloc(n * sizeof(char));
 	if (new == NULL)
 		return (NULL);
 
