@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
 	if (*argv[2] != '+' && *argv[2] != '-'
 	&& *argv[2] != '*' && *argv[2] != '/'
-	&& *argv[2] != '%' && sizeof(*argv[2]) != 1)
+	&& *argv[2] != '%')
 	{
 		printf("Error\n");
 		exit(99);
