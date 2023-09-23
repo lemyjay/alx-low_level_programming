@@ -2,6 +2,9 @@ section .data
     format db "Hello, Holberton",10,0   ; The format string with newline and null terminator
     fmt_len equ $ - format              ; Calculate the length of the format string
 
+section .bss
+    resb 8                              ; Reserve 8 bytes for the stack frame
+
 section .text
     global main
 
