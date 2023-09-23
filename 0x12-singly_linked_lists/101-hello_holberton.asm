@@ -1,19 +1,17 @@
 section .data
-    format db "Hello, Holberton",10,0   ; The format string with newline and null terminator
-    fmt_len equ $ - format              ; Calculate the length of the format string
-
-section .bss
-    resb fmt_len                         ; Reserve space for the stack frame based on fmt_len
+    hello db "Hello, Holberton", 10, 0  ; String with newline and null terminator
+    format db "%s", 0                  ; Format specifier for printf, null-terminated
 
 section .text
+    extern printf
     global main
 
-    extern printf
-
 main:
-    push rbp                            ; Preserve the base pointer
-    mov rdi, format                    ; Load the address of the format string into rdi
-    call printf                        ; Call the printf function
-    pop rbp                             ; Restore the base pointer
-    ret                                ; Return from the main function
+    push rbp            ; Save the base pointer
+    mov rdi, format     ; Load the format specifier address
+    mov rsi, hello      ; Load the address of the string
+    call printf         ; Call printf function
+    pop rbp             ; Restore the base pointer
+    xor rax, rax        ; Set return value to 0 for success
+    ret
 
