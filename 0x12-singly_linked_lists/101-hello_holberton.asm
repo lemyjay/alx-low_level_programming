@@ -3,7 +3,7 @@ section .data
     fmt_len equ $ - format              ; Calculate the length of the format string
 
 section .bss
-    resb 8                              ; Reserve 8 bytes for the stack frame
+    resb fmt_len                         ; Reserve space for the stack frame based on fmt_len
 
 section .text
     global main
