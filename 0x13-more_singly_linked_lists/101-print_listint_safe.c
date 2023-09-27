@@ -15,8 +15,7 @@ size_t print_listint_safe(const listint_t *head)
 	size_t count = 0;
 	int loop_detected = 0;
 
-	if (head == NULL)
-		exit(98);
+	(head == NULL) ? exit(98) : (void)0;
 
 	while (hare != NULL && hare->next != NULL)
 	{
@@ -42,12 +41,13 @@ size_t print_listint_safe(const listint_t *head)
 		printf("-> [%p] %d\n", (void *)tortoise, tortoise->n);
 		while (tortoise != hare)
 		{
-			printf("[%p] %d\n", (void *)tortoise, tortoise->n);
 			tortoise = tortoise->next;
+			hare = hare->next;
 			count++;
+			if (tortoise == hare)
+				break;
 		}
 		printf("[%p] %d\n", (void *)hare, hare->n);
-		count++;
 	}
 
 	return (count);
