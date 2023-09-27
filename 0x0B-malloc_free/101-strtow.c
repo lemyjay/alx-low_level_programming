@@ -1,49 +1,51 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * strtow - A function that splits a string into words. The function returns a
- * pointer to an array of strings(words), each element of the array containing
- * a single word, null-terminated and the last element of the returned array
- * should be NULL. Words are separated by spaces.
- *
- * @str: a pointer that points to the string to split.
- * Return: NULL if str is NULL or str is an empty string or if the function
- * fails || a pointer to an array of strings(words)
+ *strtow- a program that that splits a string into words
+ *@str: string
+ *Return: pointer to an array of strings (word)
  */
 
 char **strtow(char *str)
 {
-	char **new;
-	int i, j, k, length;
+	int a, b, c = 0, i, j, user = 0, dump;
+	char **word;
 
-	length = 0;
-	if (str == NULL || *str == '\0')
+	if (str == NULL || str[0] == '\0')
 		return (NULL);
-	while (str[length] != '\0')
-		length++;
-	new = malloc(length * sizeof(char *));
-	if (new == NULL)
+	for (a = 0; str[a] != '\0'; a++)
+		if (str[a] != ' ' && (str[a + 1] == ' ' || str[a + 1] == '\0'))
+			user++;
+	if (user == 0)
 		return (NULL);
-	for (i = 0; str[i] != '\0'; i++)
+	word = malloc((user + 1) * sizeof(char *));
+	if (word == NULL)
 	{
-		while (str[i] == ' ')
-			i++;
-		j = 0;
-		while (str[i + j] != ' ' && str[i + j] != '\0')
-			j++;
-		new[i] = malloc((j + 1) * sizeof(char));
-		if (new[i] == NULL)
-		{
-			for (k = 0; k < i; k++)
-				free(new[k]);
-			free(new);
-			return (NULL);
-		}
-		for (k = 0; k < j; k++)
-			new[i][k] = str[i + k];
-		new[i][j] = '\0';
+		free(word);
+		return (NULL);
 	}
-	new[i] = NULL;
-	return (new);
+	for (a = 0; str[a] != '\0' && c < user; a++)
+	{
+		if (str[a] != ' ')
+		{
+			dump = 0;
+			for (b = a; str[b] != ' ' && str[b] != '\0'; b++)
+				dump++;
+			word[c] = malloc((dump + 1) * sizeof(char));
+			if (word[c] == NULL)
+			{
+				for (j = 0; j < c; j++)
+					free(word[c]);
+				free(word);
+				return (NULL);
+			}
+			for (i = 0; i < dump; i++, a++)
+				word[c][i] = str[a];
+			word[c][i] = '\0', c++;
+		}
+	}
+	word[c] = NULL;
+	return (word);
 }
