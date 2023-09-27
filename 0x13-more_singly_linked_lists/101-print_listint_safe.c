@@ -16,7 +16,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (head == NULL)
 		exit(98);
-	
+
 	while (slow != NULL && fast != NULL && fast->next != NULL)
 	{
 		printf("[%p] %d\n", (void *)slow, slow->n);
@@ -29,6 +29,6 @@ size_t print_listint_safe(const listint_t *head)
 			break;
 		}
 	}
-	
+
 	return (count);
 }
