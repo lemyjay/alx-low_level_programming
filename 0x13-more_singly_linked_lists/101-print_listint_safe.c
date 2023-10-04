@@ -30,7 +30,7 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		printf("[%p] %d\n", (void *)slow_ptr, slow_ptr->n);
 		count++;
-		if (is_loop_detected && slow_ptr == fast_ptr)
+		if (is_loop_detected && slow_ptr->next == fast_ptr->next)
 		{
 			printf("-> [%p] %d\n", (void *)slow_ptr->next, slow_ptr->next->n);
 			break;
