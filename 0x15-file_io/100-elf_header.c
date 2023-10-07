@@ -28,12 +28,13 @@ int main(int argc, char *argv[])
 	int fd;
 	Elf64_Ehdr header;
 
-	if (argc != 2)
+	/*if (argc != 2)
 	{
 		dprintf(STDERR_FILENO, "Usage: elf_header elf_filename\n");
 		exit(98);
-	}
-
+	}*/
+	
+	(void)argc;
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
