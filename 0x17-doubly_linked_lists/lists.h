@@ -22,5 +22,6 @@ typedef struct dlistint_s
 
 /* Definition of prototypes used for the tasks */
 size_t print_dlistint(const dlistint_t *h);
+size_t dlistint_len(const dlistint_t *h);
 
 #endif /* LISTS_H */
