@@ -4,6 +4,7 @@
 /* C STANDARD LIBRARY INCLUDED FOR THIS PROJECT */
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 /* FUNCTION PROTOTYPES */
 

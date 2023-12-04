@@ -22,10 +22,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
         if (node == NULL)
             return (0);
-        node->key = key;
+        node->key = (char *)key;
         node->value = strdup(value);
         
-        current[index] = node;
+        current[index] = &node;
     }
     else
     {
@@ -33,14 +33,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
         if (node == NULL)
             return (0);
-        node->key = key;
+        node->key = (char *)key;
         node->value = strdup(value);
 
         current = (current[index])->next;
         while (current != NULL)
             current = (current[index])->next;
         
-        current = node;
+        current = &node;
 
     }
 
