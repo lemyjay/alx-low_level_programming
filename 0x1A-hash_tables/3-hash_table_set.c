@@ -37,7 +37,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
         node->key = (char *)key;
         node->value = strdup(value);
 
-        temp = *(current[index])->next;
+        temp = current[index]->next;
         while (temp != NULL)
             temp = temp->next;
         
