@@ -26,7 +26,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
         node->key = (char *)key;
         node->value = strdup(value);
         
-        *(current[index]) = node;
+        current[index] = node;
     }
     else
     {
