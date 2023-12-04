@@ -20,11 +20,11 @@ void hash_table_print(const hash_table_t *ht)
             current = ht->array[i];
             if (current != NULL)
             {
-                str = fprint(str, "'%s' : '%s'", current->key, current->value);
+                str = fprintf(str, "'%s' : '%s'", current->key, current->value);
                 current = current->next;
                 while (current != NULL)
                 {
-                    str = fprint(str, "'%s' : '%s'", current->key, current->value);
+                    str = fprintf(str, "'%s' : '%s'", current->key, current->value);
                     current = current->next;
                 }
             }
