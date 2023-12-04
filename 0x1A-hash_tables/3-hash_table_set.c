@@ -12,9 +12,10 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-    unsigned long int index = key_index(key), i = 0;
+    unsigned long int index;
     hash_table_t *current = ht->array;
 
+    index = key_index((const unsigned char *)key, ((sizeof(current)) / (sizeof(hash_node_t))));
     if (current[index] == NULL)
     {
         hash_node_t *node = malloc(sizeof(hash_node_t));
@@ -43,5 +44,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
     }
 
-    return (1)
+    return (1);
 }
