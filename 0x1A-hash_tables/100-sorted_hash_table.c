@@ -130,7 +130,7 @@ void shash_sorted_insert(shash_table_t *ht, shash_node_t *new_node)
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	unsigned long int index;
-	hash_node_t *current = NULL;
+	shash_node_t *current = NULL;
 
 	if (ht == NULL || key == NULL || *key == '\0')
 		return (NULL);
