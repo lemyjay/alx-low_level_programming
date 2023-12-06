@@ -1,5 +1,6 @@
 #include "hash_tables.h"
 
+void shash_sorted_insert(shash_table_t *ht, shash_node_t *new_node);
 
 /**
  * shash_table_create - Creates a sorted hash table.
