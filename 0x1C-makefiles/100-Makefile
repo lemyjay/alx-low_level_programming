@@ -2,24 +2,25 @@ CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
-RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
-all: $(NAME)
+# standard rule to say rules below are not filenames
+.PHONY: all clean oclean fclean re
 
-$(NAME): $(OBJ)
+# makes executable
+all: m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
+# deletes tmp files & executable
 clean:
-	$(RM) *~ $(OBJ) $(NAME)
+	$(RM) *~ .*.swp $(NAME)
 
+# deletes object files
 oclean:
 	$(RM) $(OBJ)
 
-fclean: clean
-	$(RM) $(NAME)
+# deletes all (tmp files, executable, & obj files)
+fclean: clean oclean
 
+# deletes all & recompiles all source files
 re: fclean all
